@@ -6,7 +6,7 @@ import { RouterLink } from "vue-router";
 const pokemons = ref([]);
 const getData = async () => {
   try {
-    const { data } = await axios.get("https://pokeapi.co/api/v2/pokemon");
+    const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
     pokemons.value = data.results;
   } catch (error) {
     console.log(error);
