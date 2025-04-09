@@ -8,6 +8,7 @@ const getData = async () => {
   try {
     const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon`);
     pokemons.value = data.results;
+    console.log(data)
   } catch (error) {
     console.log(error);
   }

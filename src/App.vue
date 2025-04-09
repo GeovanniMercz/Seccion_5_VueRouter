@@ -1,24 +1,33 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
+import HelloWorld from "./components/HelloWorld.vue";
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/pokemons">Pokemons</RouterLink>
-      </nav>
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <router-link class="navbar-brand" to="/">
+        <img
+          src="@/assets/logo.svg"
+          alt="Logo"
+          width="30"
+          height="24"
+          class="d-inline-block align-text-top"
+        />
+        PokeApi
+      </router-link>
+      <div>
+        <router-link class="btn btn-outline-primary" to="/"> Home </router-link>
+        <router-link class="btn btn-outline-primary" to="/pokemons"> Pokemons </router-link>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <RouterView />
+  <div class="container">
+    <RouterView />
+
+  </div>
+
 </template>
 
 <style scoped>
