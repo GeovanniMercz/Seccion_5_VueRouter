@@ -1,0 +1,26 @@
+import {ref} from "vue";
+import axios from "axios";
+export const useGetData = () =>{
+
+
+    const data = ref (null)
+    const loading  = ref(true)
+
+    const getData = async (url) => {
+        loading.value = true
+        try {
+          const res = await axios.get("https://pokeapi.co/api/v2/pokemon");
+          data.value = res.data
+        } catch (error) {
+          console.log(error);
+        } finally{
+            loading.value = false
+        }
+      };
+
+      return {
+        getData,
+        data, 
+        loading
+      }
+}

@@ -32,6 +32,7 @@ getData();
     <main class="text-center">
         <div v-if="pokeSprite">
             <img :src="pokeSprite" alt="" />
+           
             <h1>Poke: {{ $route.params.name }}</h1>
         </div>
         <h1 v-else>Pokemon no encontrado...</h1>
