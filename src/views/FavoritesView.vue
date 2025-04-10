@@ -4,9 +4,8 @@ import { storeToRefs } from "pinia";
 
 const useFavoritos = useFavoritoStore();
 const { favoritos } = storeToRefs(useFavoritos);
-const { remove } = useFavoritos; // ✅ Así sí funciona
+const { remove } = useFavoritos; 
 </script>
-
 
 <template>
   <h1>Favoritos</h1>
@@ -22,8 +21,9 @@ const { remove } = useFavoritos; // ✅ Así sí funciona
         <p><strong>Nombre:</strong> {{ poke.name }}</p>
       </div>
       <div>
-        <button class="btn btn-danger" @click="remove(poke.id)">Eliminar</button>
-        
+        <button class="btn btn-danger" @click="remove(poke.id)">
+          Eliminar
+        </button>
       </div>
     </li>
   </ul>
